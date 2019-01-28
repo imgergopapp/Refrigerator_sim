@@ -7,7 +7,6 @@ public class Consumable{
     private String name;
     private String bestBefore;
     private int calories;
-    private boolean isEdible;
 
     //Constructor
     public Consumable(String name, String bestBefore, int calories){
@@ -65,9 +64,5 @@ public class Consumable{
         catch (Exception e){ // Need to handle exceptions
             System.out.println(e);
         }
-        
-
-
-
     }
 }

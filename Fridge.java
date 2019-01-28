@@ -5,5 +5,6 @@ public class Fridge{
         Food apple = new Food("Apple", "02.30.2019", 100, false);
         Food chocolate = new Food("Chocolate", "12.01.2017", 100, false);
 
-        
+        Drink beer = new Drink("Beer", "02.22.2022", 156, true);
+
 }
