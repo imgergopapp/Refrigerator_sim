@@ -1,3 +1,6 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 public class Consumable{
 
     //Instance Fields
@@ -7,11 +10,10 @@ public class Consumable{
     private boolean isEdible;
 
     //Constructor
-    public Consumable(String name, String bestBefore, int calories, Boolean isEdible){
+    public Consumable(String name, String bestBefore, int calories){
         this.name = name;
         this.bestBefore = bestBefore;
         this.calories = calories;
-        this.isEdible = isEdible;
     }
 
     //Methods - Setters:
@@ -26,10 +28,6 @@ public class Consumable{
 
     public void setCalories(int newCalories){
         this.calories = newCalories;
-    }
-
-    public void setIsEdible(boolean newIsEdible){
-        this.isEdible = newIsEdible;
     }
     
     //Methods - Getters:
@@ -46,7 +44,33 @@ public class Consumable{
         return this.calories;
     }
 
-    public boolean getIsEdible(){
-        return this.isEdible;
+    //Methods - Others:
+
+    public void isEdible(){
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
+        try{ 
+            Date date = sdf.parse(this.bestBefore);
+            
+            if (now.getTime() > date.getTime()){
+                long daysExpired = (now.getTime() - date.getTime()) / 86_400_000;
+                System.out.println(this.name + " is NOT edible!");
+                System.out.print(this.name + " was expired by " + String.valueOf(daysExpired) + " day(s) !!!");
+                System.out.println(" ( " + bestBefore + " )\n");
+            }
+            else{
+                long daysBeforeExpired = (date.getTime() - now.getTime()) / 86_400_000;
+                System.out.println(this.name + " is edible!");
+                System.out.print(this.name + " will be expired after " + String.valueOf(daysBeforeExpired) + " day(s) !!!");
+                System.out.println(" ( " + bestBefore + " )\n");
+            }
+        }
+        catch (Exception e){ // Need to handle exceptions
+            System.out.println(e);
+        }
+        
+
+
+
     }
 }
