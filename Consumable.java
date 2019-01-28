@@ -51,19 +51,16 @@ public class Consumable{
         SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
         try{ 
             Date date = sdf.parse(this.bestBefore);
-            
+            long daysExpire = Math.abs((now.getTime() - date.getTime()) / 86_400_000);
             if (now.getTime() > date.getTime()){
-                long daysExpired = (now.getTime() - date.getTime()) / 86_400_000;
                 System.out.println(this.name + " is NOT edible!");
-                System.out.print(this.name + " was expired by " + String.valueOf(daysExpired) + " day(s) !!!");
-                System.out.println(" ( " + bestBefore + " )\n");
+                System.out.print(this.name + " was expired by " + String.valueOf(daysExpire) + " day(s) !!!");
             }
             else{
-                long daysBeforeExpired = (date.getTime() - now.getTime()) / 86_400_000;
                 System.out.println(this.name + " is edible!");
-                System.out.print(this.name + " will be expired after " + String.valueOf(daysBeforeExpired) + " day(s) !!!");
-                System.out.println(" ( " + bestBefore + " )\n");
+                System.out.print(this.name + " will be expired after " + String.valueOf(daysExpire) + " day(s) !!!");            
             }
+            System.out.println(" ( " + bestBefore + " )\n");
         }
         catch (Exception e){ // Need to handle exceptions
             System.out.println(e);
