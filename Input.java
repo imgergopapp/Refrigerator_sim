@@ -1,42 +1,64 @@
 import java.util.Scanner;
 
 public class Input{
+    Scanner reader = new Scanner(System.in);
 
     public int getInputInt(String message,int rangeFrom, int rangeTo){
-
-        Scanner reader = new Scanner(System.in);
-        boolean invalidInput = true;
-
         do{
             System.out.println(message);
             try{
                 int input = reader.nextInt();
+                reader.nextLine();
                 if (input > rangeFrom && input < rangeTo){
-                    invalidInput = false;
+                    return input;
                 }
             }
             catch (Exception e){ //handle exp
             }
-            reader.close();
-        } while (invalidInput);
-        return input;
+            finally{
+                //reader.close();
+            }
+        } while (true);
     }
 
-    public String getInputInt(String message){
+    public int getInputInt(String message){
+        do{
+            System.out.println(message);
+            try{
+                int input = reader.nextInt();
+                reader.nextLine();
+                return input;
+            }
+            catch (Exception e){ //handle exp
+            }
+            finally{
+                //reader.close();
+            }
+        } while (true);
+    }
 
-        Scanner reader = new Scanner();
-        boolean invalidInput = true;
-
+    public String getInputString(String message){
         do{
             System.out.println(message);
             try{
                 String input = reader.nextLine();
-                //Need if 
+                if (isAlphabetic(input)){
+                    return input;
+                }
             }
             catch (Exception e){ //handle exp
             }
-            reader.close();
-        } while (invalidInput);
-        return input;
+            //reader.close();
+        } while (true);
+    }
+
+    public boolean isAlphabetic(String word){
+        char[] charArray = word.toCharArray();
+        for (char charachters : charArray){
+            if (!Character.isLetter(charachters)){
+                return false;
+            }
+        }
+        return true;
     }
 }
