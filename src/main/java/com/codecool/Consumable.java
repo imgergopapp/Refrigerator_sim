@@ -1,3 +1,5 @@
+package com.codecool;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -50,7 +52,7 @@ public class Consumable{
         SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
         try{ 
             Date date = sdf.parse(this.bestBefore);
-            long daysExpire = Math.abs((now.getTime() - date.getTime()) / 86_400_000);
+            long daysExpire = Math.abs((now.getTime() - date.getTime()) / 86400000);
             if (now.getTime() > date.getTime()){
                 System.out.println(this.name + " is NOT edible!");
                 System.out.print(this.name + " was expired by " + String.valueOf(daysExpire) + " day(s) !!!");

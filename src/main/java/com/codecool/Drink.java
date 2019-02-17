@@ -1,3 +1,6 @@
+package com.codecool;
+
+
 public class Drink extends Consumable{
 
     private boolean isAlcoholic;

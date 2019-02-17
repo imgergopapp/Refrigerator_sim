@@ -1,3 +1,5 @@
+package com.codecool;
+
 public class Food extends Consumable{
 
     private boolean isSpicy;

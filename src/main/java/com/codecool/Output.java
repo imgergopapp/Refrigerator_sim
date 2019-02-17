@@ -1,3 +1,5 @@
+package com.codecool;
+
 public class Output{
     
     public void printMenu(String[] menuOptions){
