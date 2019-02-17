@@ -3,27 +3,26 @@ package com.codecool;
 import java.util.Scanner;
 
 public class Input{
-    Scanner reader = new Scanner(System.in);
+    private static Scanner reader = new Scanner(System.in);
 
-    public int getInputInt(String message,int rangeFrom, int rangeTo){
+    public static int getInputInt(String message,int rangeFrom, int rangeTo){
         do{
             System.out.println(message);
             try{
                 int input = reader.nextInt();
-                reader.nextLine();
                 if (input > rangeFrom && input < rangeTo){
                     return input;
+                }
+                else {
+                    System.out.println(input + " is not a number between " + rangeFrom + " and " + rangeTo + " !");
                 }
             }
             catch (Exception e){ //handle exp
             }
-            finally{
-                //reader.close();
-            }
         } while (true);
     }
 
-    public int getInputInt(String message){
+    public static int getInputInt(String message){
         do{
             System.out.println(message);
             try{
@@ -39,7 +38,7 @@ public class Input{
         } while (true);
     }
 
-    public String getInputString(String message){
+    public static String getInputString(String message){
         do{
             System.out.println(message);
             try{
@@ -54,7 +53,7 @@ public class Input{
         } while (true);
     }
 
-    public boolean isAlphabetic(String word){
+    public static boolean isAlphabetic(String word){
         char[] charArray = word.toCharArray();
         for (char charachters : charArray){
             if (!Character.isLetter(charachters)){
