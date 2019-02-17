@@ -1,0 +1,8 @@
+<Fridge>
+    <Consumable>
+        <name>Apple</name>
+        <bestBefore>201</bestBefore>
+        <calories></calories>
+    </Consumable>
+
+</Fridge>
