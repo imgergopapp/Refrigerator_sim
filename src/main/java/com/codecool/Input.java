@@ -6,20 +6,23 @@ public class Input{
     private static Scanner reader = new Scanner(System.in);
 
     public static int getInputInt(String message,int rangeFrom, int rangeTo){
-        do{
-            System.out.println(message);
-            try{
-                int input = reader.nextInt();
-                if (input > rangeFrom && input < rangeTo){
-                    return input;
-                }
-                else {
+        int input = 0;
+        while(true) {
+            System.out.println("\n" + message);
+            try {
+                Scanner reader = new Scanner(System.in);
+                input = reader.nextInt();
+                reader.nextLine();
+                if (input > rangeFrom && input < rangeTo) {
+                    break;
+                } else {
                     System.out.println(input + " is not a number between " + rangeFrom + " and " + rangeTo + " !");
                 }
             }
-            catch (Exception e){ //handle exp
+            catch (Exception e) { //handle exp
             }
-        } while (true);
+        }
+        return input;
     }
 
     public static int getInputInt(String message){

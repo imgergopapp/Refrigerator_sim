@@ -8,7 +8,6 @@ public class Main{
     public static void main(String[] args){
 
         ArrayList<Consumable> fridgeElements = new ArrayList<Consumable>();
-        Input Input = new Input();
 
         Fridge refridgerator = new Fridge();
         fridgeElements.add(refridgerator.apple);
