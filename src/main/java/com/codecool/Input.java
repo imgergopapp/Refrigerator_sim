@@ -40,7 +40,7 @@ public class Input{
         } while (true);
     }
 
-    public static boolean isAlphabetic(String word){
+    private static boolean isAlphabetic(String word){
         char[] charArray = word.toCharArray();
         for (char charachters : charArray){
             if (!Character.isLetter(charachters)){
