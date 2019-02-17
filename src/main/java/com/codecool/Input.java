@@ -25,22 +25,6 @@ public class Input{
         return input;
     }
 
-    public static int getInputInt(String message){
-        do{
-            System.out.println(message);
-            try{
-                int input = reader.nextInt();
-                reader.nextLine();
-                return input;
-            }
-            catch (Exception e){ //handle exp
-            }
-            finally{
-                //reader.close();
-            }
-        } while (true);
-    }
-
     public static String getInputString(String message){
         do{
             System.out.println(message);
