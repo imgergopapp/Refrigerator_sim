@@ -1,5 +1,6 @@
 package com.codecool;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input{
@@ -8,7 +9,7 @@ public class Input{
     public static int getInputInt(String message,int rangeFrom, int rangeTo){
         int input = 0;
         while(true) {
-            System.out.println("\n" + message);
+            System.out.print("\n" + message);
             try {
                 Scanner reader = new Scanner(System.in);
                 input = reader.nextInt();
@@ -19,7 +20,8 @@ public class Input{
                     System.out.println(input + " is not a number between " + rangeFrom + " and " + rangeTo + " !");
                 }
             }
-            catch (Exception e) { //handle exp
+            catch (InputMismatchException e) { //handle exp
+                System.out.println("Thats not an integer!");
             }
         }
         return input;
