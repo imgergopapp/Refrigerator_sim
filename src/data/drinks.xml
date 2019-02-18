@@ -1,7 +1,7 @@
 <Drinks>
     <Drink>
         <name>Beer</name>
-        <bestBefore>05152019</bestBefore>
+        <bestbefore>05152019</bestbefore>
         <calories>111</calories>
         <isalcoholic>true</isalcoholic>
         <isfizzy>true</isfizzy>
