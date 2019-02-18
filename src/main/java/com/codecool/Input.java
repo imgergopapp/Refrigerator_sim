@@ -4,14 +4,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input{
-    private static Scanner reader = new Scanner(System.in);
 
     public static int getInputInt(String message,int rangeFrom, int rangeTo){
+
         int input = 0;
         while(true) {
+            Scanner reader = new Scanner(System.in);
             System.out.print("\n" + message);
             try {
-                Scanner reader = new Scanner(System.in);
                 input = reader.nextInt();
                 reader.nextLine();
                 if (input > rangeFrom && input < rangeTo) {
@@ -27,19 +27,25 @@ public class Input{
         return input;
     }
 
-    public static String getInputString(String message){
-        do{
+    public static String getInputString(String message, String[] expectedInput){
+
+        String input = null;
+        while(true){
+            Scanner reader = new Scanner(System.in);
             System.out.println(message);
-            try{
-                String input = reader.nextLine();
-                if (isAlphabetic(input)){
-                    return input;
+            input = reader.nextLine();
+
+            if(isAlphabetic(input)) {
+                for(String word : expectedInput){
+                    if (word.toLowerCase().equals(input.toLowerCase())){
+                        return input.toLowerCase();
+                    }
                 }
             }
-            catch (Exception e){ //handle exp
+            else {
+                System.out.println("Input MUST contain only letters!");
             }
-            //reader.close();
-        } while (true);
+        }
     }
 
     private static boolean isAlphabetic(String word){
