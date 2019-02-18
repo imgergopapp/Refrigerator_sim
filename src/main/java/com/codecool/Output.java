@@ -6,6 +6,11 @@ public class Output{
         for (int i = 0; i < menuOptions.length; i++){
             System.out.println(Integer.toString(i) + ". " + menuOptions[i]);
         }
+    }
 
+    public static void showFridgeElements(Consumable[] fridge){
+        for (Consumable consumable : fridge){
+            System.out.println(consumable.toString());
+        }
     }
 }
