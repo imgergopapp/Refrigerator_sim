@@ -1,7 +1,7 @@
 <Foods>
     <Food>
         <name>Apple</name>
-        <bestBefore>11112011</bestBefore>
+        <bestbefore>11112011</bestbefore>
         <calories>86</calories>
         <isspicy>false</isspicy>
     </Food>
