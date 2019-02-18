@@ -1,0 +1,8 @@
+<Foods>
+    <Food>
+        <name>Apple</name>
+        <bestBefore>11112011</bestBefore>
+        <calories>86</calories>
+        <isspicy>false</isspicy>
+    </Food>
+</Foods>

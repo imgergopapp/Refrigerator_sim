@@ -1,0 +1,9 @@
+<Drinks>
+    <Drink>
+        <name>Beer</name>
+        <bestBefore>05152019</bestBefore>
+        <calories>111</calories>
+        <isalcoholic>true</isalcoholic>
+        <isfizzy>true</isfizzy>
+    </Drink>
+</Drinks>
