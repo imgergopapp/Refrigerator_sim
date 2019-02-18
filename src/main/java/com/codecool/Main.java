@@ -1,57 +1,48 @@
 package com.codecool;
 
+import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 
-public class Main{
-    
+public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        Fridge smartFridge = new Fridge();
 
-        ArrayList<Consumable> fridgeElements = new ArrayList<Consumable>();
 
-        Fridge refridgerator = new Fridge();
-        fridgeElements.add(refridgerator.apple);
-        fridgeElements.add(refridgerator.chocolate);
+        boolean notQuit = true;
+        while(notQuit) {
+            String[] menuTitles = {"Exit", "Whats in the fridge","Add consumable to fridge"};
+            Output.printMenu(menuTitles);
+            int input = Input.getInputInt("Please choose a menupoint: ", 0, menuTitles.length);
 
-        Output output = new Output();
-
-        String[] menuTitles = {"Exit","Whats in the fridge"};
-        output.printMenu(menuTitles);
-        int input = Input.getInputInt("Plase choose a menupoitn", 0, 10); //need to set rangeTo
-
-        switch(input){
-            case 1:
-            System.out.println("\nThe elements of the fridge currently: ");
-            for (Consumable consumables : fridgeElements){
-                System.out.println(consumables.getName());
+            switch (input) {
+                case 0:
+                    notQuit = false;
+                    break;
+                case 1: //Whats in the fridge
+                    System.out.println("Fridge contains: ");
+                    Food[] foods = Food.readXml();
+                    Drink[] drinks = Drink.readXml();
+                    Consumable[] fridgeElements = smartFridge.fillUpFridge(foods, drinks);
+                    Output.showFridgeElements(fridgeElements);
+                    break;
+                case 2: //Add consumable to the fridge
+                    String[] validInput = new String[]{"food", "drink"};
+                    String userChoice = Input.getInputString("Choose between food and drink: ", validInput);
+                    if (userChoice.equals("food")) {
+                        String[] foodProperties = Food.makeConsumable();
+                        Food.writeXml(foodProperties);
+                    } else {
+                        String[] drinkProperties = Drink.makeConsumable();
+                        Food.writeXml(drinkProperties);
+                    }
+                case 3: //Update in XML database
+                    System.out.println();
+                    break;
+                case 4: //Delete from database
+                    System.out.println();
+                    break;
             }
-            case 2: //Create Consumable in XML database
-            String name = Input.getInputString("Food name: ");
-            String bestBefore; //input handling need - mm.dd.yyyy
-            int calories = Input.getInputInt("Calories value: ");
-            boolean isSpicy; // input handling need - true or false
-            //Food food = new Food(name, bestBefore, calories, isSpicy);
-            case 3: //Read from XML database
-            System.out.println();
-            break;
-            case 4: //Update in XML database
-            System.out.println();
-            break;
-            case 5: //Delete from database
-            System.out.println();
-            break;
-
         }
-
-
-
-        
-
-        
-        
-        
-
-        
     }
-
 }
