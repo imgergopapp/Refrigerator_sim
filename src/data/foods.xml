@@ -1,8 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Foods>
+                
+    
     <Food>
-        <name>Apple</name>
-        <bestbefore>11112011</bestbefore>
-        <calories>86</calories>
+                                
+        
+        <name>rice</name>
+                                
+        
+        <bestbefore>5122020</bestbefore>
+                                
+        
+        <calories>444</calories>
+                                
+        
         <isspicy>false</isspicy>
+                        
+    
+    </Food>
+                
+    
+    <Food>
+
+        <name>fff</name>
+
+        <bestbefore>2122020</bestbefore>
+
+        <calories>222</calories>
+
+        <isspicy>false</isspicy>
+    
     </Food>
 </Foods>

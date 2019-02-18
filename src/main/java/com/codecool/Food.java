@@ -7,6 +7,7 @@ import org.w3c.dom.NodeList;
 import javax.sql.rowset.spi.XmlReader;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -106,10 +107,14 @@ public class Food extends Consumable {
         food.appendChild(isspicy);
 
         TransformerFactory factory = TransformerFactory.newInstance();
+
         DOMSource domSource = new DOMSource(document);
         StreamResult streamResult = new StreamResult(new File("src/data/foods.xml"));
         try{
             Transformer transformer = factory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             transformer.transform(domSource, streamResult);
 
         }
