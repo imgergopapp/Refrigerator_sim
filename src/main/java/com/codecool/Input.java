@@ -21,7 +21,25 @@ public class Input{
                 }
             }
             catch (InputMismatchException e) { //handle exp
-                System.out.println("Thats not an integer!");
+                System.out.println("Input MUST only contain numbers!");
+            }
+        }
+        return input;
+    }
+
+    //Method overload
+    public static int getInputInt(String message){
+        int input = 0;
+        while(true) {
+            Scanner reader = new Scanner(System.in);
+            System.out.print("\n" + message);
+            try {
+                input = reader.nextInt();
+                reader.nextLine();
+                break;
+            }
+            catch (InputMismatchException e) { //handle exp
+                System.out.println("Input MUST only contain numbers!");
             }
         }
         return input;
@@ -41,6 +59,24 @@ public class Input{
                         return input.toLowerCase();
                     }
                 }
+            }
+            else {
+                System.out.println("Input MUST contain only letters!");
+            }
+        }
+    }
+
+    //Method overload :
+    public static String getInputString(String message){
+
+        String input = null;
+        while(true){
+            Scanner reader = new Scanner(System.in);
+            System.out.println(message);
+            input = reader.nextLine();
+
+            if(isAlphabetic(input)) {
+                return input.toLowerCase();
             }
             else {
                 System.out.println("Input MUST contain only letters!");
