@@ -3,6 +3,8 @@ package com.codecool;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
+import javax.sql.rowset.spi.XmlReader;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -11,7 +13,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
-public class Food extends Consumable{
+public class Food extends Consumable {
 
     private static File xmlFile = new File("src/data/foods.xml");
 
@@ -25,7 +27,7 @@ public class Food extends Consumable{
 
     public static String[] makeConsumable(){
 
-        String name = Input.getInputString("Food name: ");
+        String name = Input.getInputString("Food's name: ");
 
         String month = String.valueOf(Input.getInputInt("Best before - Month: ",1,12));
         String day = String.valueOf(Input.getInputInt("Best before - Day: ",1,28));
@@ -38,11 +40,26 @@ public class Food extends Consumable{
         return new String[]{name,bestBefore,calories,isSpicy};
     }
 
+    @Override
+    public String toString() {
+        return "Foods's name: " + getName() + " | " +
+            "Best before: " + getBestBefore() + " | " +
+            "Calories: " + getCalories() + " | " +
+            "Is spicy: " + isSpicy;
+    }
+
     //Xml Methods :
-    public static Food[] readXml() throws  Exception{
+    public static Food[] readXml(){
+        Document document = null;
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-        Document document = documentBuilder.parse(xmlFile);
+        try{
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            document = documentBuilder.parse(xmlFile);
+        }
+        catch (Exception e){
+
+        }
+
         NodeList nList = document.getElementsByTagName("Food");
         Food[] foods = new Food[nList.getLength()] ;
 
@@ -57,10 +74,16 @@ public class Food extends Consumable{
         return foods;
     }
 
-    public static void writeXml(String[] foodProperties) throws Exception{
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db = dbf.newDocumentBuilder();
-        Document document = db.parse(xmlFile);
+    public static void writeXml(String[] foodProperties){
+        Document document = null;
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        try{
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            document = documentBuilder.parse(xmlFile);
+        }
+        catch (Exception e){
+
+        }
 
         Element root = document.getDocumentElement();
         Element food = document.createElement("Food");
@@ -75,7 +98,7 @@ public class Food extends Consumable{
         name.appendChild(document.createTextNode(foodProperties[0]));
         bestbefore.appendChild(document.createTextNode(foodProperties[1]));
         calories.appendChild(document.createTextNode(foodProperties[2]));
-        isspicy.appendChild(document.createTextNode(foodProperties[2]));
+        isspicy.appendChild(document.createTextNode(foodProperties[3]));
 
         food.appendChild(name);
         food.appendChild(bestbefore);
@@ -83,9 +106,16 @@ public class Food extends Consumable{
         food.appendChild(isspicy);
 
         TransformerFactory factory = TransformerFactory.newInstance();
-        Transformer transformer = factory.newTransformer();
         DOMSource domSource = new DOMSource(document);
         StreamResult streamResult = new StreamResult(new File("src/data/foods.xml"));
-        transformer.transform(domSource, streamResult);
+        try{
+            Transformer transformer = factory.newTransformer();
+            transformer.transform(domSource, streamResult);
+
+        }
+        catch (Exception e){
+
+        }
+
     }
 }
