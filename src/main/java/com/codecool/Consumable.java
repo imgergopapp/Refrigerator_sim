@@ -3,13 +3,13 @@ package com.codecool;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class Consumable{
+public class Consumable {
 
     private String name;
     private String bestBefore;
     private int calories;
 
-    public Consumable(String name, String bestBefore, int calories){
+    public Consumable(String name, String bestBefore, int calories) {
         this.name = name;
         this.bestBefore = bestBefore;
         this.calories = calories;
@@ -17,37 +17,35 @@ public class Consumable{
 
     //Methods - Getters:
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public String getBestBefore(){
+    public String getBestBefore() {
         return this.bestBefore;
     }
 
-    public int getCalories(){
+    public int getCalories() {
         return this.calories;
     }
 
     //Methods - Others:
 
-    public void isEdible(){
+    public void isEdible() {
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
-        try{ 
+        try {
             Date date = sdf.parse(this.bestBefore);
             long daysExpire = Math.abs((now.getTime() - date.getTime()) / 86400000);
-            if (now.getTime() > date.getTime()){
+            if (now.getTime() > date.getTime()) {
                 System.out.println(this.name + " is NOT consumable!");
                 System.out.print(this.name + " was expired by " + daysExpire + " day(s) !");
-            }
-            else{
+            } else {
                 System.out.println(this.name + " is consumable!");
                 System.out.print(this.name + " will be expired after " + daysExpire + " day(s) !");
             }
             System.out.println(" ( " + bestBefore + " )");
-        }
-        catch (Exception e){ // Need to handle exceptions
+        } catch (Exception e) { // Need to handle exceptions
             System.out.println("@ isEdible Exception :  ");
             e.printStackTrace();
         }
