@@ -14,7 +14,7 @@ public class Input{
             try {
                 input = reader.nextInt();
                 reader.nextLine();
-                if (input > rangeFrom && input < rangeTo) {
+                if (input >= rangeFrom && input <= rangeTo) {
                     break;
                 } else {
                     System.out.println(input + " is not a number between " + rangeFrom + " and " + rangeTo + " !");
@@ -50,8 +50,9 @@ public class Input{
         String input = null;
         while(true){
             Scanner reader = new Scanner(System.in);
-            System.out.println(message);
+            System.out.print(message);
             input = reader.nextLine();
+            System.out.println();
 
             if(isAlphabetic(input)) {
                 for(String word : expectedInput){
@@ -72,8 +73,9 @@ public class Input{
         String input = null;
         while(true){
             Scanner reader = new Scanner(System.in);
-            System.out.println(message);
+            System.out.print(message);
             input = reader.nextLine();
+            System.out.println();
 
             if(isAlphabetic(input)) {
                 return input.toLowerCase();
