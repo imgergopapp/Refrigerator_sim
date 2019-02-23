@@ -1,6 +1,6 @@
-*.class
 .idea
 *.iml
+*.swp
 .editorconfig
-/target
+target
 
