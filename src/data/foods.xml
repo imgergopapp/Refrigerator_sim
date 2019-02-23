@@ -1,34 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Foods>
-                
-    
+
+
     <Food>
-                                
-        
-        <name>rice</name>
-                                
-        
-        <bestbefore>5122020</bestbefore>
-                                
-        
+
+
+        <isspicy>false</isspicy>
+
+
+        <name>hamburger</name>
+
+
+        <bestbefore>2.12.2012</bestbefore>
+
+
         <calories>444</calories>
-                                
-        
-        <isspicy>false</isspicy>
-                        
-    
+
+
     </Food>
-                
-    
+
+
     <Food>
 
-        <name>fff</name>
 
-        <bestbefore>2122020</bestbefore>
+        <name>cake</name>
 
-        <calories>222</calories>
+
+        <bestbefore>4.28.2019</bestbefore>
+
+
+        <calories>0</calories>
+
 
         <isspicy>false</isspicy>
-    
+
+
     </Food>
+
+
+    <Food>
+
+
+        <name>momsspagetti</name>
+
+
+        <bestbefore>9.9.2019</bestbefore>
+
+
+        <calories>6666</calories>
+
+
+        <isspicy>false</isspicy>
+
+
+    </Food>
+
+
+    <Food>
+
+
+        <name>cheese</name>
+
+
+        <bestbefore>12.11.2025</bestbefore>
+
+
+        <calories>952</calories>
+
+
+        <isspicy>false</isspicy>
+
+
+    </Food>
+
+
 </Foods>

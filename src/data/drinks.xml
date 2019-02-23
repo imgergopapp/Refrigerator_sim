@@ -1,9 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Drinks>
+
+
     <Drink>
-        <name>Beer</name>
-        <bestbefore>05152019</bestbefore>
+
+
+        <name>beer</name>
+
+
+        <bestbefore>05.15.2019</bestbefore>
+
+
         <calories>111</calories>
+
+
         <isalcoholic>true</isalcoholic>
+
+
         <isfizzy>true</isfizzy>
+
+
     </Drink>
+
+
+    <Drink>
+
+
+        <name>cola</name>
+
+
+        <bestbefore>2.12.2030</bestbefore>
+
+
+        <calories>333</calories>
+
+
+        <isalcoholic>true</isalcoholic>
+
+
+        <isfizzy>false</isfizzy>
+
+
+    </Drink>
+
+
+    <Drink>
+
+
+        <name>vodka</name>
+
+
+        <bestbefore>2.12.2012</bestbefore>
+
+
+        <calories>333</calories>
+
+
+        <isalcoholic>true</isalcoholic>
+
+
+        <isfizzy>false</isfizzy>
+
+
+    </Drink>
+
+
+    <Drink>
+
+
+        <name>water</name>
+
+
+        <bestbefore>5.10.2010</bestbefore>
+
+
+        <calories>0</calories>
+
+
+        <isalcoholic>false</isalcoholic>
+
+
+        <isfizzy>false</isfizzy>
+
+
+    </Drink>
+
+
 </Drinks>
