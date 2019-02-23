@@ -25,4 +25,12 @@ public class Fridge{
         }
         return null;
     }
+
+    public String[] getFridgeItemNames(Consumable[] consumables){
+        String[] names = new String[consumables.length];
+        for (int i = 0; i < consumables.length; i++){
+            names[i] = consumables[i].getName();
+        }
+        return names;
+    }
 }
