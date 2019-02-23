@@ -69,6 +69,34 @@ public class XmlParser {
         save(document,category);
     }
 
+    //Update
+    public static void update(String originalName, String[] newProperties, String category) {
+        Document document = createDocument(category);
+        String node = category.equals("food") ? "Food" : "Drink";
+
+        NodeList nList = document.getElementsByTagName(node);
+        for (int i = 0; i < nList.getLength(); i++) {
+            Element consumable = (Element)nList.item(i);
+            Element name = (Element)consumable.getElementsByTagName("name").item(0);
+            String currentName = name.getTextContent();
+            if (currentName.equals(originalName)) {
+
+               consumable.getElementsByTagName("name").item(0).setTextContent(newProperties[0]);
+               consumable.getElementsByTagName("bestbefore").item(0).setTextContent(newProperties[1]);
+               consumable.getElementsByTagName("calories").item(0).setTextContent(newProperties[2]);
+
+               if(category.equals("food")){
+                   consumable.getElementsByTagName("isspicy").item(0).setTextContent(newProperties[3]);
+               }
+               else{
+                   consumable.getElementsByTagName("isalcoholic").item(0).setTextContent(newProperties[3]);
+                   consumable.getElementsByTagName("isfizzy").item(0).setTextContent(newProperties[4]);
+               }
+            }
+        }
+        save(document,category);
+    }
+
     //Read Xml & return with it's items
     public static Consumable[] read(String category){
         Document document = createDocument(category);
