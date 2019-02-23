@@ -1,29 +1,12 @@
 package com.codecool;
 
-import java.util.*;
-
 public class Fridge{
 
-    private Consumable[] Fridge;
-    private boolean isOpen;
+    private Consumable[] fridge;
 
-
-    //public Consumable[] initializeFridge(){
-
-
-    //Methods - Setters:
-    public void SetIsOpen(boolean isOpen){
-        this.isOpen = isOpen;
-    }
-
-     //Methods - Getters:
-    public boolean GetIsOpen(){
-        return this.isOpen;
-    }
-
-    public Consumable[] fillUpFridge(Food[] foods, Drink[] drinks){
+    public Consumable[] fillUpFridge(Consumable[] foods, Consumable[] drinks){
         int fridgeSize = foods.length + drinks.length;
-        Consumable[] fridge = new Consumable[fridgeSize];
+        fridge = new Consumable[fridgeSize];
 
         for (int i = 0; i < foods.length; i++){
             fridge[i] = foods[i];
