@@ -34,7 +34,6 @@ public class Consumable{
     public void isEdible(){
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
-        System.out.println();
         try{ 
             Date date = sdf.parse(this.bestBefore);
             long daysExpire = Math.abs((now.getTime() - date.getTime()) / 86400000);
