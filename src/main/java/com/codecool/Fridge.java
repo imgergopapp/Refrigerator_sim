@@ -16,4 +16,13 @@ public class Fridge{
         }
         return fridge;
     }
+
+    public Consumable findConsumable(String name){
+        for( Consumable consumable : fridge){
+            if (name.equals(consumable.getName())) {
+                return consumable;
+            }
+        }
+        return null;
+    }
 }
