@@ -57,12 +57,12 @@ public class XmlParser {
 
         NodeList nList = document.getElementsByTagName(node);
         for (int i = 0; i < nList.getLength(); i++) {
-            Element drink = (Element)nList.item(i);
-            Element name = (Element)drink.getElementsByTagName("name").item(0);
+            Element consumable = (Element)nList.item(i);
+            Element name = (Element)consumable.getElementsByTagName("name").item(0);
             String currentName = name.getTextContent();
             if (currentName.equals(consumableName)) {
 
-                drink.getParentNode().removeChild(drink);
+                consumable.getParentNode().removeChild(consumable);
                 break;
             }
         }
