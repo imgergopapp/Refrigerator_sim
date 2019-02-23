@@ -4,7 +4,11 @@ public class Fridge{
 
     private Consumable[] fridge;
 
-    public Consumable[] fillUpFridge(Consumable[] foods, Consumable[] drinks){
+
+    public Consumable[] getFridgeItems(){
+         Consumable[] foods = XmlParser.read("food");
+         Consumable[] drinks = XmlParser.read("drink");
+
         int fridgeSize = foods.length + drinks.length;
         fridge = new Consumable[fridgeSize];
 
@@ -26,10 +30,28 @@ public class Fridge{
         return null;
     }
 
-    public String[] getFridgeItemNames(Consumable[] consumables){
-        String[] names = new String[consumables.length];
-        for (int i = 0; i < consumables.length; i++){
-            names[i] = consumables[i].getName();
+
+    public String[] getFridgeItemNames(){
+        String[] names = new String[fridge.length];
+        for (int i = 0; i < fridge.length; i++){
+            names[i] = fridge[i].getName();
+        }
+        return names;
+    }
+
+    //Method overload
+    public String[] getFridgeItemNames(String type){
+         Consumable[] foods = XmlParser.read("food");
+         Consumable[] drinks = XmlParser.read("drink");
+        int arrayLength = type.equals("food")? foods.length : drinks.length;
+        String[] names = new String[arrayLength];
+        for (int i = 0; i < fridge.length; i++){
+            if(fridge[i] instanceof Food && type.equals("food")){
+                names[i] = fridge[i].getName();
+            }
+            else if (fridge[i] instanceof Drink && type.equals("drink")) {
+                names[i] = fridge[i].getName();
+            }
         }
         return names;
     }
