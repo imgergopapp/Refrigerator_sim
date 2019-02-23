@@ -1,5 +1,5 @@
 # Refrigerator_sim
-Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drink**) in separated **Xml**s. (*Hardcoded relative paths.*)
+Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drink**) in separated **Xml**s (*Hardcoded relative paths.*).
 ### Implementation list:  
 - [x] Inheritance  
 - [x] README  
@@ -28,7 +28,7 @@ Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drin
     **getFridgeItemNames** method returns an array of **Consumable**'s names.  
     **getFridgeItemNames** method (***Overload***) returns an array of **Food**'s or **Drink**'s names.  
   * ### Input
-    Contains only ***static*** methods. Uses **try-cath** to get the correct input type.  
+    Contains only ***static*** methods. Uses **try-catch** to get the correct input type.  
     **getInputInt** method returns an **int** *in a specified range*.  
     **getInputInt** method (***Overload***) returns an **int**.  
     **getInputString** method returns a **String** *from a specified array*.  
