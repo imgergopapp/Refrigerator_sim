@@ -4,7 +4,7 @@ Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drin
 - [x] Inheritance  
 - [x] README  
 - [x] Exception handling (*Focused around input handling to prevent other exceptions*)  
-- [x] C.R.U.D *from* **Xml**  
+- [x] C.R.U.D *from* **Xml** (includes *save*) 
 - [x] Overriding (toString & other methods, but not equals. Objects *compared* by their fields)  
 - [x] Arrays *only*  
 - [ ] enum class  
