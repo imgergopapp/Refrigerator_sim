@@ -12,7 +12,7 @@ public class Drink extends Consumable{
     }
 
     public static String[] makeConsumable(){
-
+        String validType[] = new String[]{"true","false"};
         String name = Input.getInputString("Drink's name: ");
 
         String month = String.valueOf(Input.getInputInt("Best before - Month: ",1,12));
@@ -21,8 +21,8 @@ public class Drink extends Consumable{
         String bestBefore = month + "." + day + "." + year;
 
         String calories = String.valueOf(Input.getInputInt("Calories: "));
-        String isalcoholic = Input.getInputString("Is alcoholic: ");
-        String isfizzy = Input.getInputString("Is fizzy: ");
+        String isalcoholic = Input.getInputString("Is alcoholic: ",validType);
+        String isfizzy = Input.getInputString("Is fizzy: ",validType);
 
         return new String[]{name,bestBefore,calories,isalcoholic,isfizzy};
     }
