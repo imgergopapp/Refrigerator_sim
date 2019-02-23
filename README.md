@@ -1,5 +1,13 @@
 # Refrigerator_sim
-Simulation of a (Smart)Refrigerator.
+Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drink**) in separated **Xml**s. (*Hardcoded relative paths.*)
+### Implementation list:  
+- [x] Inheritance  
+- [x] README  
+- [x] Exception handling (*Focused around input handling to prevent other exceptions*)  
+- [x] C.R.U.D *from* **Xml**  
+- [x] Overriding (toString & other methods, but not equals. Objects *compared* by their fields)  
+- [x] Arrays *only*  
+- [ ] enum class  
 
 ## Classes
   * ### Consumable
