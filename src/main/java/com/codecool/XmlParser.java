@@ -2,6 +2,7 @@ package com.codecool;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -11,6 +12,9 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
 import java.io.File;
 
 public class XmlParser {
@@ -36,7 +40,8 @@ public class XmlParser {
     private static void save(Document document, String category){
         TransformerFactory factory = TransformerFactory.newInstance();
 
-        DOMSource domSource = new DOMSource(document);
+        Document documentClean = removeEmptyNodes(document);
+        DOMSource domSource = new DOMSource(documentClean);
         StreamResult streamResult = new StreamResult(new File("src/data/" + category + "s.xml"));
         try{
             Transformer transformer = factory.newTransformer();
@@ -159,5 +164,21 @@ public class XmlParser {
             consumable.appendChild(isFizzy);
         }
         save(document,category);
+    }
+
+    public static Document removeEmptyNodes(Document document) {
+        XPath xp = XPathFactory.newInstance().newXPath();
+        NodeList nl = null;
+        try {
+            nl = (NodeList) xp.evaluate("//text()[normalize-space(.)='']", document, XPathConstants.NODESET);
+        } catch (Exception e) {
+
+        }
+
+        for (int i = 0; i < nl.getLength(); ++i) {
+            Node node = nl.item(i);
+            node.getParentNode().removeChild(node);
+        }
+        return document;
     }
 }
