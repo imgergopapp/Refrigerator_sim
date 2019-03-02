@@ -8,11 +8,13 @@ public class Consumable {
     private String name;
     private String bestBefore;
     private int calories;
+    private ConsumableType type;
 
-    public Consumable(String name, String bestBefore, int calories) {
+    public Consumable(String name, String bestBefore, int calories, ConsumableType type) {
         this.name = name;
         this.bestBefore = bestBefore;
         this.calories = calories;
+        this.type = type;
     }
 
     //Methods - Getters:
@@ -27,6 +29,10 @@ public class Consumable {
 
     public int getCalories() {
         return this.calories;
+    }
+
+    public ConsumableType getType() {
+        return type;
     }
 
     //Methods - Others:
