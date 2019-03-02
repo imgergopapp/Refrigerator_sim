@@ -6,12 +6,12 @@ public class Food extends Consumable {
 
     private boolean isSpicy;
 
-    public Food(String name, String bestBefore, int calories, boolean isSpicy) {
-        super(name, bestBefore, calories);
+    public Food(String name, String bestBefore, int calories, ConsumableType type, boolean isSpicy) {
+        super(name, bestBefore, calories, type);
         this.isSpicy = isSpicy;
     }
 
-    public static String[] makeConsumable() {
+    public static String[] getProperties() {
         String[] validType = new String[]{"true", "false"};
         String name = Input.getInputString("Food's name: ");
 

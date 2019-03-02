@@ -7,13 +7,13 @@ public class Drink extends Consumable {
     private boolean isAlcoholic;
     private boolean isFizzy;
 
-    public Drink(String name, String bestBefore, int calories, boolean isAlcoholic, boolean isFizzy) {
-        super(name, bestBefore, calories);
+    public Drink(String name, String bestBefore, int calories, ConsumableType type, boolean isAlcoholic, boolean isFizzy) {
+        super(name, bestBefore, calories, type);
         this.isAlcoholic = isAlcoholic;
         this.isFizzy = isFizzy;
     }
 
-    public static String[] makeConsumable() {
+    public static String[] getProperties() {
         String[] validType = new String[]{"true", "false"};
         String name = Input.getInputString("Drink's name: ");
 
