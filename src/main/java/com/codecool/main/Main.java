@@ -1,4 +1,8 @@
-package com.codecool;
+package com.codecool.main;
+
+import com.codecool.io.Input;
+import com.codecool.io.Output;
+import com.codecool.io.XmlParser;
 
 public class Main {
 

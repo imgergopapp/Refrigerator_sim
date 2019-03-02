@@ -1,5 +1,8 @@
-package com.codecool;
+package com.codecool.io;
 
+import com.codecool.main.Consumable;
+import com.codecool.main.Drink;
+import com.codecool.main.Food;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -109,7 +112,7 @@ public class XmlParser {
         NodeList nList = document.getElementsByTagName(node);
         Consumable[] consumables = new Consumable[nList.getLength()] ;
 
-        for (int i = 0; i < nList.getLength(); i++){
+            for (int i = 0; i < nList.getLength(); i++){
             String name = document.getElementsByTagName("name").item(i).getTextContent();
             String bestBefore = document.getElementsByTagName("bestbefore").item(i).getTextContent();
             int calories = Integer.valueOf(document.getElementsByTagName("calories").item(i).getTextContent());

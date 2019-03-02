@@ -1,4 +1,6 @@
-package com.codecool;
+package com.codecool.io;
+
+import com.codecool.main.Consumable;
 
 public class Output {
 

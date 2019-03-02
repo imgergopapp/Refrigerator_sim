@@ -1,4 +1,4 @@
-package com.codecool;
+package com.codecool.main;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,6 @@
-package com.codecool;
+package com.codecool.main;
+
+import com.codecool.io.Input;
 
 public class Drink extends Consumable {
 

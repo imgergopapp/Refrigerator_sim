@@ -1,4 +1,4 @@
-package com.codecool;
+package com.codecool.io;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
