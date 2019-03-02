@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Input {
 
     public static int getInputInt(String message, int rangeFrom, int rangeTo) {
-
         int input = 0;
         while (true) {
             Scanner reader = new Scanner(System.in);
@@ -93,8 +92,8 @@ public class Input {
 
     private static boolean isAlphabetic(String word) {
         char[] charArray = word.toCharArray();
-        for (char charachters : charArray) {
-            if (!Character.isLetter(charachters)) {
+        for (char characters : charArray) {
+            if (!Character.isLetter(characters)) {
                 return false;
             }
         }
