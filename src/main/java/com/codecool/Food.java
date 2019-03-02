@@ -10,7 +10,7 @@ public class Food extends Consumable {
     }
 
     public static String[] makeConsumable() {
-        String validType[] = new String[]{"true", "false"};
+        String[] validType = new String[]{"true", "false"};
         String name = Input.getInputString("Food's name: ");
 
         String month = String.valueOf(Input.getInputInt("Best before - Month: ", 1, 12));
