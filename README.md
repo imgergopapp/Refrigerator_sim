@@ -2,12 +2,12 @@
 Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drink**) in separated **Xml**s (*Hardcoded relative paths.*).
 ### Implementation list:  
 - [x] Inheritance  
-- [x] README  
+- [x] README.md  
 - [x] Exception handling (*Focused around input handling to prevent other exceptions*)  
 - [x] C.R.U.D *from* **Xml** (includes *save*) 
 - [x] Overriding (toString & other methods, but not equals. Objects *compared* by their fields)  
 - [x] Arrays *only*  
-- [ ] enum class  
+- [x] enum class  
 
 ## Classes
   * ### Consumable
@@ -15,11 +15,11 @@ Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drin
     **isEdible** method prints the consumable's best before date is expired or not (*compared to today*).  
   * ### Drink
     Subclass of **Consumable**. Constructs **Drink**.  
-    **makeConsumable** method (***Overload***) returns an array of **Drink**'s properties.  
+    **setProperties** method (***Overload***) returns an array of **Drink**'s properties.  
     **toString** method (***Overload***) prints out **Drink**'s properties.  
   * ### Food
     Subclass of **Consumable**. Constructs **Food**.  
-    **makeConsumable** method (***Overload***) returns an array of **Food**'s properties.  
+    **setProperties** method (***Overload***) returns an array of **Food**'s properties.  
     **toString** method (***Overload***) prints out **Food**'s properties.   
   * ### Fridge   
     Stores **Consumable**s.
@@ -45,7 +45,9 @@ Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drin
     **delete** method deletes the *selected* **Consumable** from the **Xml**.  
     **update** method updates the *selected* **Consumable** in the **Xml**.  
     **read** method reads *all* **Consumable** from the **Xml**.  
-    **write** method appends the **Xml** with a **Consumable**.
+    **write** method appends the **Xml** with a **Consumable**.  
+  * ### ConsumableType  
+    Enum Class with *FOOD* and *DRINK* values. 
   * ### Main
     Handles menu navigation and *creates* **Fridge**.
     
