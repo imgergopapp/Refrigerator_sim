@@ -45,7 +45,7 @@ public class Main {
                 case 3:
                     System.out.println("\n- [Create] Add consumable -\n");
                     String userChoice = Input.getInputString("Choose between food and drink: ", validType);
-                    String[] properties = userChoice.equals("food") ? Food.makeConsumable() : Drink.makeConsumable();
+                    String[] properties = userChoice.equals("food") ? Food.getProperties() : Drink.getProperties();
                     XmlParser.write(properties, userChoice);
                     break;
                 case 4:
@@ -53,7 +53,7 @@ public class Main {
                     userChoice = Input.getInputString("Choose between food and drink: ", validType);
                     validNames = smartFridge.getFridgeItemNames(userChoice);
                     name = Input.getInputString("Name of the consumable: ", validNames);
-                    properties = userChoice.equals("food") ? Food.makeConsumable() : Drink.makeConsumable();
+                    properties = userChoice.equals("food") ? Food.getProperties() : Drink.getProperties();
                     XmlParser.update(name, properties, userChoice);
                     break;
                 case 5:
