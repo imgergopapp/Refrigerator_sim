@@ -56,4 +56,8 @@ public class Consumable {
             e.printStackTrace();
         }
     }
+
+    public static ConsumableType generateType(String type){
+        return type.equals("food") ? ConsumableType.FOOD : ConsumableType.DRINK;
+    }
 }
