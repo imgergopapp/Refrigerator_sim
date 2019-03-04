@@ -42,7 +42,7 @@ public class Consumable {
         SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
         try {
             Date date = sdf.parse(this.bestBefore);
-            long daysExpire = Math.abs((now.getTime() - date.getTime()) / 86400000);
+            long daysExpire = Math.abs((now.getTime() - date.getTime()) / 86_400_000);
             if (now.getTime() > date.getTime()) {
                 System.out.println(this.name + " is NOT consumable!");
                 System.out.print(this.name + " was expired by " + daysExpire + " day(s) !");
