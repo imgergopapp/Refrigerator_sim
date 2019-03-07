@@ -27,7 +27,7 @@ public class XmlParser {
 
     // Creating Document type obj.
     private static Document createDocument(String category) {
-        xmlFile = new File("src/dasta/" + category + "s.xml");
+        xmlFile = new File("src/data/" + category + "s.xml");
         Document document = null;
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         try {
