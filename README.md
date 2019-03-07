@@ -49,8 +49,8 @@ Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drin
   * ### ConsumableType  
     Enum Class with *FOOD* and *DRINK* values. 
   * ### DateSort  
-      Implements ***Comparator<Consumable>*** to *override* **compare** method.
-      Sorts primarily by date, secondarily by name.
+      Implements ***Comparator<Consumable>*** to *override* **compare** method.  
+      Sorts primarily by **date**, secondarily by **name**.
   * ### Main
     Handles menu navigation and *creates* **Fridge**.
     
