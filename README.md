@@ -3,9 +3,9 @@ Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drin
 ### Implementation list:  
 - [x] Inheritance  
 - [x] README.md  
-- [x] Exception handling (*Focused around input handling to prevent other exceptions*)  
-- [x] C.R.U.D *from* **Xml** (includes *save*) 
-- [x] Overriding (toString & other methods, but not equals. Objects *compared* by their fields)  
+- [x] Exception handling   
+- [x] C.R.U.D *from* **Xml** (includes *save*)  
+- [x] Overriding  
 - [x] Arrays *only*  
 - [x] enum class  
 
@@ -48,6 +48,9 @@ Simulation of a (Smart)Refrigerator. Stores **Consumable**s (**Food** and **Drin
     **write** method appends the **Xml** with a **Consumable**.  
   * ### ConsumableType  
     Enum Class with *FOOD* and *DRINK* values. 
+  * ### DateSort  
+      Implements ***Comparator<Consumable>*** to *override* **compare** method.
+      Sorts primarily by date, secondarily by name.
   * ### Main
     Handles menu navigation and *creates* **Fridge**.
     
