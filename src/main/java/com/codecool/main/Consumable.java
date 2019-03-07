@@ -19,15 +19,15 @@ public class Consumable {
 
     //Methods - Getters:
 
-    public String getName() {
+    String getName() {
         return this.name;
     }
 
-    public String getBestBefore() {
+    String getBestBefore() {
         return this.bestBefore;
     }
 
-    public int getCalories() {
+    int getCalories() {
         return this.calories;
     }
 
@@ -37,7 +37,7 @@ public class Consumable {
 
     //Methods - Others:
 
-    public void isEdible() {
+    void isEdible() {
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
         try {
@@ -55,9 +55,5 @@ public class Consumable {
             System.out.println("@ isEdible Exception :  ");
             e.printStackTrace();
         }
-    }
-
-    public static ConsumableType generateType(String type){
-        return type.equals("food") ? ConsumableType.FOOD : ConsumableType.DRINK;
     }
 }
