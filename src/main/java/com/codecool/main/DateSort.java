@@ -15,7 +15,11 @@ public class DateSort implements Comparator<Consumable> {
         try {
             o1Date = sdf.parse(o1.getBestBefore());
             o2Date = sdf.parse(o2.getBestBefore());
-        } catch (ParseException pe) {}
+        } catch (ParseException pe) {
+            pe.printStackTrace();
+            System.out.println(pe + "\nClosing application...");
+            System.exit(-1);
+        }
 
         if (o1Date.getTime() - o2Date.getTime() == 0) {
             return o1.getName().compareTo(o2.getName());
