@@ -47,11 +47,15 @@ class Fridge {
         Consumable[] drinks = XmlParser.read("drink");
         int arrayLength = type.equals("food") ? foods.length : drinks.length;
         String[] names = new String[arrayLength];
+        int foodIndex = 0;
+        int drinkIndex = 0;
         for (int i = 0; i < fridge.length; i++) {
             if (fridge[i] instanceof Food && type.equals("food")) {
-                names[i] = fridge[i].getName();
+                names[foodIndex] = fridge[i].getName();
+                foodIndex++;
             } else if (fridge[i] instanceof Drink && type.equals("drink")) {
-                names[i] = fridge[i].getName();
+                names[drinkIndex] = fridge[i].getName();
+                drinkIndex++;
             }
         }
         return names;
