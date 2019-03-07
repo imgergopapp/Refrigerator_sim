@@ -27,17 +27,20 @@ public class XmlParser {
 
     // Creating Document type obj.
     private static Document createDocument(String category) {
-        xmlFile = new File("src/data/" + category + "s.xml");
+        xmlFile = new File("src/dasta/" + category + "s.xml");
         Document document = null;
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             document = documentBuilder.parse(xmlFile);
         } catch (Exception e) {
-
+            e.printStackTrace();
+            System.out.println(e + "\nClosing application...");
+            System.exit(-1);
         }
         return document;
     }
+
 
     // Write the document to the XMl
     private static void save(Document document, String category) {
@@ -53,7 +56,9 @@ public class XmlParser {
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             transformer.transform(domSource, streamResult);
         } catch (Exception e) {
-
+            e.printStackTrace();
+            System.out.println(e + "\nClosing application...");
+            System.exit(-1);
         }
     }
 
@@ -172,7 +177,9 @@ public class XmlParser {
         try {
             nl = (NodeList) xp.evaluate("//text()[normalize-space(.)='']", document, XPathConstants.NODESET);
         } catch (Exception e) {
-
+            e.printStackTrace();
+            System.out.println(e + "\nClosing application...");
+            System.exit(-1);
         }
 
         for (int i = 0; i < nl.getLength(); ++i) {
