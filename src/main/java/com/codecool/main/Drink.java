@@ -13,7 +13,7 @@ public class Drink extends Consumable {
         this.isFizzy = isFizzy;
     }
 
-     static String[] getProperties() {
+    static String[] getProperties() {
         String[] validType = new String[]{"true", "false"};
         String name = Input.getInputString("Drink's name: ");
 
