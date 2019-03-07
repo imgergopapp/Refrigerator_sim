@@ -11,7 +11,7 @@ public class Food extends Consumable {
         this.isSpicy = isSpicy;
     }
 
-    public static String[] getProperties() {
+     static String[] getProperties() {
         String[] validType = new String[]{"true", "false"};
         String name = Input.getInputString("Food's name: ");
 
