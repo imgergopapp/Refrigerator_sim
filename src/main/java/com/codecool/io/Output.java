@@ -7,7 +7,7 @@ public class Output {
     public static void printMenu(String[] menuOptions) {
         System.out.println();
         for (int i = 0; i < menuOptions.length; i++) {
-            System.out.println(Integer.toString(i) + ". " + menuOptions[i]);
+            System.out.println(i + ". " + menuOptions[i]);
         }
     }
 
